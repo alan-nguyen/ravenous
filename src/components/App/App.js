@@ -15,6 +15,7 @@ const business = {
   rating: 4.5,
   reviewCount: 90,
 };
+const businesses = [business, business, business, business, business, business];
 
 function App() {
   return (
