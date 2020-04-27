@@ -40,6 +40,13 @@ class SearchBar extends React.Component {
     });
   }
 
+  // Handle a change in location
+  handleLocationChange(event) {
+    this.setState({
+      location: event.target.value,
+    });
+  }
+
   // Render Sort By Options
   renderSortByOptions() {
     return Object.keys(this.sortByOptions).map((sortByOption) => {
