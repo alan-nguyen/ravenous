@@ -9,6 +9,9 @@ const sortByOptions = {
 
 // Dynamically create the list items needed to diplay
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   renderSortByOptions() {
     return Object.keys(sortByOptions).map((sortByOption) => {
       let sortByOptionValue = sortByOptions[sortByOption];
