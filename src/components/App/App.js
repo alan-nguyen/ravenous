@@ -5,6 +5,12 @@ import SearchBar from '../SearchBar/SearchBar';
 import Yelp from '../../util/Yelp';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { businesses: [] };
+    this.searchYelp = this.searchYelp.bind(this);
+  }
+
   // Search Yelp
   searchYelp(term, location, sortBy) {
     console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
