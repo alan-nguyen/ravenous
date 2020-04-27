@@ -50,6 +50,15 @@ class SearchBar extends React.Component {
     });
   }
 
+  // Handle a search
+  handleSearch(event) {
+    this.props.searchYelp(
+      this.state.term,
+      this.state.location,
+      this.state.sortBy
+    );
+  }
+
   // Render Sort By Options
   renderSortByOptions() {
     return Object.keys(this.sortByOptions).map((sortByOption) => {
