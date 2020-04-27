@@ -10,5 +10,22 @@ const search(term, location, sortBy) {
   return fetch(url, {
     headers: {Authorization: `Bearer ${apiKey}`}})
     .then(response => response.json())
-    
+    .then(jsonResponse => {
+      if(jsonResponse.businesses){
+        return jsonResponse.businesses.map(business => {
+          return {
+            id: business.id,
+            imgageSrc: business.imgageSrc,
+            name: business.name,
+            address: business.address,
+            city: business.city,
+            state: business.state,
+            zipCode: business.zipCode,
+            category: business.category,
+            rating: business.rating,
+            reviewCount: business.reviewCount
+          }
+        })
+      }
+    });
 };
