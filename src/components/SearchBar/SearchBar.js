@@ -18,6 +18,7 @@ class SearchBar extends React.Component {
     // Bind methods in the constructors
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   // Get a sort option's class
@@ -57,6 +58,7 @@ class SearchBar extends React.Component {
       this.state.location,
       this.state.sortBy
     );
+    event.preventDefault();
   }
 
   // Render Sort By Options
@@ -87,7 +89,7 @@ class SearchBar extends React.Component {
           />
           <input onChange={this.handleLocationChange} placeholder="Where?" />
         </div>
-        <div className="SearchBar-submit">
+        <div className="SearchBar-submit" onClick={this.handleSearch}>
           <a>Let's Go</a>
         </div>
       </div>
