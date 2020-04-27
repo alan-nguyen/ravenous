@@ -15,6 +15,9 @@ class SearchBar extends React.Component {
       'Highest Rated': 'rating',
       'Most Reviewed': 'review_count',
     };
+    // Bind methods in the constructors
+    this.handleTermChange = this.handleTermChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
   }
 
   // Get a sort option's class
